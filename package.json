@@ -1,0 +1,21 @@
+{
+  "name": "sage-monorepo",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "@prettier/plugin-pug": "^2.4.1",
+    "eslint": "^8.35.0",
+    "eslint-config-custom": "workspace:./packages/eslint-config-custom",
+    "prettier": "^2.8.4",
+    "prettier-plugin-svelte": "^2.9.0",
+    "turbo": "^1.8.2"
+  },
+  "packageManager": "pnpm@7.24.3",
+  "type": "module"
+}

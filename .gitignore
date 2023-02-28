@@ -1,0 +1,59 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+node_modules
+.pnp
+.pnp.js
+
+# testing
+coverage
+
+# build folder
+dist/
+build/
+
+# logs
+logs/
+.cache
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+pnpm-debug.log
+turbo-lint.log
+turb-build.log
+
+# Dependency folder
+node_modules/
+
+# lock files
+bun.lockb
+yarn.lock
+package-lock.json
+pnpm-lock.yaml
+
+# mac
+._*
+.DS_Store
+
+# env files
+.env
+.env.*
+!.env.example
+
+# Sveltekit files
+.svelte-kit
+# generated/
+# output/
+# /.svelte-kit/types
+
+# Editor files
+# .vscode
+.code-workspace
+
+# hosting / caching
+.vercel
+.netlify
+
+# turbo
+.turbo
+
