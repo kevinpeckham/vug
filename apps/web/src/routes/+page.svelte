@@ -53,6 +53,7 @@ Here's some documentation for this component.
 
 	// local functions
 	function parseInput() {
+		inputField.value = input.replace('  ', '	')
 		const parsed = parseVugDocument(inputField.value) ? parseVugDocument(inputField.value) : '';
 		output = parsed;
 	}
