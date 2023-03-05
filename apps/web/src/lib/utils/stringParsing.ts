@@ -1,4 +1,4 @@
-//- string parsing utilities
+// //- string parsing utilities
 
 export function findFirstCharacterOfSet(input: string, set: string[]) {
   const initialValue = -1;

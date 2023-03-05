@@ -1,5 +1,5 @@
 {
-  "name": "sage-monorepo",
+  "name": "vug",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -14,7 +14,7 @@
     "eslint-config-custom": "workspace:./packages/eslint-config-custom",
     "prettier": "^2.8.4",
     "prettier-plugin-svelte": "^2.9.0",
-    "turbo": "^1.8.2"
+    "turbo": "^1.8.3"
   },
   "packageManager": "pnpm@7.24.3",
   "type": "module"
