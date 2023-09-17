@@ -1,21 +1,43 @@
 {
-  "name": "vug",
-  "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev",
-    "lint": "turbo run lint",
-    "format": "prettier --write ."
-  },
-  "devDependencies": {
-    "@prettier/plugin-pug": "^2.4.1",
-    "eslint": "^8.35.0",
-    "eslint-config-custom": "workspace:./packages/eslint-config-custom",
-    "prettier": "^2.8.4",
-    "prettier-plugin-svelte": "^2.9.0",
-    "turbo": "^1.8.3"
-  },
-  "packageManager": "pnpm@7.24.3",
-  "type": "module"
+	"name": "vug",
+	"version": "0.0.2",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"test": "playwright test",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"lint": "prettier --plugin-search-dir . --check . && eslint .",
+		"format": "prettier --plugin-search-dir . --write ."
+	},
+	"devDependencies": {
+		"@playwright/test": "^1.38.0",
+		"@prettier/plugin-pug": "^3.0.0",
+		"@sveltejs/adapter-vercel": "^3.0.3",
+		"@sveltejs/kit": "^1.25.0",
+		"@typescript-eslint/eslint-plugin": "^6.7.0",
+		"@typescript-eslint/parser": "^6.7.0",
+		"autoprefixer": "^10.4.15",
+		"eslint": "^8.49.0",
+		"eslint-config-prettier": "^9.0.0",
+		"eslint-plugin-svelte": "^2.33.1",
+		"postcss": "^8.4.29",
+		"prettier": "^3.0.0",
+		"prettier-plugin-svelte": "^3.0.3",
+		"pug": "^3.0.2",
+		"svelte": "^4.2.0",
+		"svelte-check": "^3.5.1",
+		"svelte-preprocess": "^5.0.4",
+		"tailwindcss": "^3.3.3",
+		"tslib": "^2.6.2",
+		"typescript": "^5.2.2",
+		"vite": "^4.4.9",
+		"vitest": "^0.31.4"
+	},
+	"type": "module",
+	"engines": {
+		"node": "18.x",
+		"pnpm": "8.x"
+	}
 }

@@ -127,12 +127,11 @@ export function parseVugElement(input:string) {
     }
   });
 
+  // is it a self-closing tag?
+  const selfClosing = selfClosingTagsList.includes(tag);
+  const isSelfClosing = JSON.stringify(selfClosing);
 
-  return `<${tag}${(attributesString) ? '(' + attributesString + ')' : ''}>\n\t${content}\n</${tag}>`;
-  // replace special characters with placeholders
-  // e.g. 'id="myId" class="myClass"' =>
-  //const
-
+  return [tag,attributesString, content, isSelfClosing];
 
 
   // we're going to use dom parser to create an HTML element to help us parse the attributes

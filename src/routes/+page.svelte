@@ -21,6 +21,9 @@ Here's some documentation for this component.
 
 	const testString =
 `div parent
+	doctype html
+	// this is a comment
+	| this is a text node
 	span child1
 	span child2
 		span grandchild1
@@ -35,25 +38,21 @@ Here's some documentation for this component.
 	import {parseVugDocument} from '$functions/parseVugDocument';
 
 	// refs
-	let input: string;
+	// let input: string;
 	let inputField: HTMLTextAreaElement;
 	let output: string | string[];
 
 	// variables
-	let focused: Element | null;
+	// let focused: Element | null;
 	let document: Document;
-	$: { if (document) {
-		inputField.focus();
-		focused = document.activeElement }
-	}
 
-
-
+	// extract attributes
 	import { extractAttributes } from "$utils/regExAttributes"
 
 	// local functions
 	function parseInput() {
-		inputField.value = input.replace('  ', '	')
+		inputField.value = inputField.value.replace('  ', '	')
+
 		const parsed = parseVugDocument(inputField.value) ? parseVugDocument(inputField.value) : '';
 		output = parsed;
 	}
@@ -67,7 +66,6 @@ Here's some documentation for this component.
 			const end = inputField.selectionEnd;
 			// set textarea value to: text before caret + tab + text after caret
 			inputField.value = inputField.value.substring(0, start) + `	` + inputField.value.substring(end);
-			input = input;
 
 			// put caret at right position again
 			inputField.selectionStart = start + 1;
@@ -80,11 +78,9 @@ Here's some documentation for this component.
 
 	//- just for dev, we'll parse the input on mount
 	onMount(() => {
-	input = testString;
+	inputField.value = testString;
 	parseInput();
 	});
-
-
 
 </script>
 
@@ -94,11 +90,11 @@ Here's some documentation for this component.
 	template#template
 	.w-screen.min-h-screen.bg-slate-100.px-8
 		h1.text-26 Vug
-		div simple pug test
+		div Inspired by pug. A lightweight templating syntax for Svelte.
 		.grid.grid-cols-1.gap-8.py-8(class="lg:grid-cols-2")
 			div
 				h2 input pug
-				textarea#input.w-full.bg-white(bind:this!="{inputField}" bind:value!="{input}" on:input!="{parseInput}" class="min-h-[600px]")
+				textarea#input.w-full.bg-white(bind:this!="{inputField}" on:input!="{parseInput}" class="min-h-[600px]")
 			div output html
 				textarea#output.w-full.bg-white(disabled bind:value!="{output}" class="min-h-[600px]")
 
